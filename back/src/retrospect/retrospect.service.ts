@@ -50,13 +50,15 @@ export class RetrospectService {
     return true;
   }
 
-  updateOne(id: number, body: UpdateRetrospectDto): Retrospect {
-    const findOne = this.getOne(id);
+  updateOne(body: UpdateRetrospectDto): Retrospect {
+    const findOne = this.getOne(body.id);
     if (!findOne) {
-      throw new NotFoundException(`The article with id ${id} does not exist`);
+      throw new NotFoundException(
+        `The article with id ${body.id} does not exist`,
+      );
     }
 
-    const deleteOne = this.deleteOne(id);
+    const deleteOne = this.deleteOne(body.id);
     if (!deleteOne) {
       throw new Error(
         `The article does not be deleted by internal server error`,

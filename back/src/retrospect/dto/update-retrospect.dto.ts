@@ -1,4 +1,24 @@
-import { PartialType } from '@nestjs/mapped-types';
-import { CreateRetrospectDto } from './create-retrospect.dto';
+import { Field, InputType } from '@nestjs/graphql';
+import { IsInt, IsNotEmpty, IsString } from 'class-validator';
+@InputType()
+export class UpdateRetrospectDto {
+  @Field()
+  @IsNotEmpty()
+  @IsInt()
+  id: number;
 
-export class UpdateRetrospectDto extends PartialType(CreateRetrospectDto) {}
+  @Field()
+  @IsNotEmpty()
+  @IsString()
+  title: string;
+
+  @Field()
+  @IsNotEmpty()
+  @IsString()
+  content: string;
+
+  @Field()
+  @IsNotEmpty()
+  @IsString()
+  date: string;
+}

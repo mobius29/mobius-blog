@@ -1,12 +1,15 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { RetrospectController } from './retrospect/retrospect.controller';
-import { RetrospectService } from './retrospect/retrospect.service';
+import { GraphQLModule } from '@nestjs/graphql';
+import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
+import { RetrospectModule } from './retrospect/retrospect.module';
 
 @Module({
-  imports: [],
-  controllers: [AppController, RetrospectController],
-  providers: [AppService, RetrospectService],
+  imports: [
+    GraphQLModule.forRoot<ApolloDriverConfig>({
+      driver: ApolloDriver,
+      autoSchemaFile: 'schema.gql',
+    }),
+    RetrospectModule,
+  ],
 })
 export class AppModule {}
