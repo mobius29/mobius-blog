@@ -4,6 +4,7 @@ import MainPage from './Pages/MainPage';
 import RetrospectPage from './Pages/RetrospectPage';
 import StudyPage from './Pages/StudyPage';
 import DiaryPage from './Pages/DiaryPage';
+import RetrospectDetailPage from './Pages/RetrospectDetailPage';
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <Route path='/retrospect' element={<RetrospectPage />} />
       <Route path='/study' element={<StudyPage />} />
       <Route path='/diary' element={<DiaryPage />} />
+      <Route path='/retrospect/:id' element={<RetrospectDetailPage />} />
     </Routes>
   );
 };

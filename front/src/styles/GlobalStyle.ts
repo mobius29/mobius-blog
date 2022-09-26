@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    width: 1200px;
+    width: 1000px;
     margin: 0 auto;
   }
 
