@@ -1,0 +1,8 @@
+query GetAllRetrospect {
+  getAll {
+    id
+    title
+    content
+    date
+  }
+}

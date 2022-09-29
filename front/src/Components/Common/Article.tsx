@@ -39,23 +39,21 @@ const ArticleBlock = styled.div`
   }
 `;
 
-const Article = () => {
+interface ArticleProps {
+  id: number;
+  title: string;
+  content: string;
+  date: string;
+}
+
+const Article: React.FC<ArticleProps> = ({ id, title, content, date }) => {
   return (
     <ArticleBlock>
       <p className='Head'>
-        <span className='title'>Title 1</span>
-        <span className='date'>2022-09-20</span>
+        <span className='title'>{title}</span>
+        <span className='date'>{date}</span>
       </p>
-      <p className='content'>
-        {' '}
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Non obcaecati
-        ipsam magnam accusantium architecto ratione reprehenderit dolore,
-        recusandae dolor nesciunt quos praesentium aliquid blanditiis odit
-        repellat ullam velit ex culpa. Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Fuga vitae officia impedit possimus ex velit itaque
-        modi aliquam qui sint obcaecati, accusantium excepturi. Excepturi
-        dignissimos eaque quaerat culpa. Obcaecati, laborum.
-      </p>
+      <p className='content'>{content}</p>
     </ArticleBlock>
   );
 };

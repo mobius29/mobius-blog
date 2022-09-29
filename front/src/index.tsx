@@ -1,4 +1,3 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -6,16 +5,23 @@ import { ThemeProvider } from 'styled-components';
 import theme from './styles/Theme';
 import GlobalStyle from './styles/GlobalStyle';
 import { BrowserRouter } from 'react-router-dom';
+import { createClient, Provider } from 'urql';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
+const client = createClient({
+  url: 'http://localhost:4000/graphql',
+});
+
 root.render(
   <ThemeProvider theme={theme}>
     <GlobalStyle />
     <BrowserRouter>
-      <App />
+      <Provider value={client}>
+        <App />
+      </Provider>
     </BrowserRouter>
   </ThemeProvider>
 );

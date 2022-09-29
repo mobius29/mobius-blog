@@ -1,0 +1,8 @@
+query GetOneRetrospect($postId: Float!) {
+  getOne(id: $postId) {
+    id
+    title
+    content
+    date
+  }
+}
