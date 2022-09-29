@@ -15,9 +15,9 @@ type Query {
 }
 
 type Mutation {
-  create(body: CreateRetrospectDto!): Retrospect!
-  delete(id: Float!): Boolean!
-  update(body: UpdateRetrospectDto!): Retrospect!
+  writeRetrospect(body: CreateRetrospectDto!): Retrospect!
+  deleteRetrospect(id: Float!): Boolean!
+  updateRetrospect(body: UpdateRetrospectDto!): Retrospect!
 }
 
 input CreateRetrospectDto {

@@ -9,14 +9,14 @@ export class RetrospectService {
   retrospects: Retrospect[] = [
     {
       id: 0,
-      title: 'Title1',
-      content: 'Content1',
+      title: '제목1',
+      content: '내용1',
       date: '2022-09-22',
     },
     {
       id: 1,
-      title: 'Title2',
-      content: 'Content2',
+      title: '제목2',
+      content: '내용2',
       date: '2022-09-22',
     },
   ];

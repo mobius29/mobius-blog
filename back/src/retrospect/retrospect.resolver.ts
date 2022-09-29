@@ -19,17 +19,17 @@ export class RetrospectResolver {
   }
 
   @Mutation(() => Retrospect)
-  create(@Args('body') body: CreateRetrospectDto) {
+  writeRetrospect(@Args('body') body: CreateRetrospectDto) {
     return this.retrospectService.createOne(body);
   }
 
   @Mutation(() => Boolean)
-  delete(@Args('id') id: number) {
+  deleteRetrospect(@Args('id') id: number) {
     return this.retrospectService.deleteOne(id);
   }
 
   @Mutation(() => Retrospect)
-  update(@Args('body') body: UpdateRetrospectDto) {
+  updateRetrospect(@Args('body') body: UpdateRetrospectDto) {
     return this.retrospectService.updateOne(body);
   }
 }
